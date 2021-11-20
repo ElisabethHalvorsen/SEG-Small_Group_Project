@@ -1,13 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3 sticky-top"
-  <a class="navbar-nav" href="#">ICON</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Link somewhere</a>
-      </li>
-    </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <span class="icon-chicken1"></span>&nbsp;Dingo Chess
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    {% if user.is_authenticated %}
+      {% include 'partials/menu.html' %}
+    {% endif %}
   </div>
 </nav>
